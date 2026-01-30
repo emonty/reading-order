@@ -2094,7 +2094,7 @@
 						},
 						{
 							"id": "iote",
-							"title": "Isles of the Emberdark (2025)",
+							"title": "Isles of the Emberdark",
 							"title2": "<a target='_blank' href='https://wob.coppermind.net/events/533/#e16506'>Isles of the Emberdark</a>",
 							"world": "<a target='_blank' href='https://coppermind.net/wiki/First_of_the_Sun'>First of the Sun</a>",
 							"system": "<a target='_blank' href='https://coppermind.net/wiki/Drominad_system'>Drominad system</a>",
@@ -2109,8 +2109,40 @@
 							"categories": [
 								"no-series",
 								"novel",
-								"unpublished",
-								"forthcoming"
+								"phase-3",
+								"published"
+							],
+							"connections": [
+								{
+									"target": "sa3",
+									"type": "minor",
+									"description": "<a target='_blank' href='https://coppermind.net/wiki/Mraize'>Mraize</a>'s chicken, mentioned in <a target='_blank' href='https://coppermind.net/wiki/Summary:Oathbringer#Chapter_22:_The_Darkness_Within'>Chapter 22</a>, is an <a target='_blank' href='https://coppermind.net/wiki/Aviar'>Aviar</a>. <a target='_blank' href='https://coppermind.net/wiki/Patji'>Patji</a> is referenced obliquely in <a target='_blank' href='https://coppermind.net/wiki/Autonomy'>Autonomy</a>'s <a target='_blank' href='https://coppermind.net/wiki/Letters#Second_Oathbringer_Letter'>letter</a> to <a target='_blank' href='https://coppermind.net/wiki/Hoid'>Hoid</a> in the <a target='_blank' href='https://coppermind.net/wiki/Oathbringer/Epigraphs#Letters'>Part 2 epigraphs</a>."
+								},
+								{
+									"target": "au",
+									"type": "minor",
+									"description": "The <a target='_blank' href='https://coppermind.net/wiki/Drominad_system'>Drominad system</a> essay discusses <a target='_blank' href='https://coppermind.net/wiki/First_of_the_Sun'>First of the Sun</a> and its magic."
+								},
+								{
+									"target": "sa4",
+									"type": "minor",
+									"description": "<a target='_blank' href='https://coppermind.net/wiki/Gereh'>Gereh</a> has an <a target='_blank' href='https://coppermind.net/wiki/Aviar'>Aviar</a>, which <a target='_blank' href='https://coppermind.net/wiki/Lift'>Lift</a> comes into possession of."
+								},
+								{
+									"target": "mb7",
+									"type": "significant",
+									"description": "The <a target='_blank' href='https://coppermind.net/wiki/Summary:Isles_of_the_Emberdark#Chapter_35'>Ones Above</a> are actually the <a target='_blank' href='https://coppermind.net/wiki/Malwish'>Malwish</a>"
+								},
+								{
+									"target": "sa5",
+									"type": "significant",
+									"description": "An emissary of the <a target='_blank' href='https://coppermind.net/wiki/Skybreaker'>Skybreakers</a> approaches the First of the Sun, and indicates they are in conflict with the Scadrians"
+								},
+								{
+									"target": "tress",
+									"type": "egg",
+									"description": "<a target='_blank' href='https://coppermind.net/wiki/Hoid'>Hoid</a> refers to a story about <a target='_blank' href='https://coppermind.net/wiki/Linji'>Linji</a>, likely a figure from <a target='_blank' href='https://coppermind.net/wiki/First_of_the_Sun'>First of the Sun</a>, who attempted to travel around the world without the use of <a target='_blank' href='https://coppermind.net/wiki/Aviar'>Aviar</a>. This reference strongly suggests that the audience listening to the story is from <a target='_blank' href='https://coppermind.net/wiki/First_of_the_Sun'>First of the Sun</a>."
+								}
 							]
 						}
 					]
