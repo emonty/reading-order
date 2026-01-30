@@ -1,5 +1,5 @@
 {
-	"base-separation": 3.13,
+	"base-separation": 3.1,
 	"connections": [
 		{
 			"id": "major",
@@ -131,7 +131,7 @@
 					"color": "#fe7e61"
 				},
 				{
-					"id": "noncanon",
+					"id": "other-pub",
 					"description": "Other",
 					"details": "Uncanonical works which are publicly available, both excerpts and complete.",
 					"color": "#735a45"
@@ -160,6 +160,12 @@
 					"description": "Phase 3",
 					"details": "Cosmere connections are common and notable, but series are still mostly isolated and distinct.",
 					"color": "#e3ae00"
+				},
+				{
+					"id": "phase4",
+					"description": "Phase 4",
+					"details": "Cosmere connections are heavy, but series are still mostly isolated and distinct.",
+					"color": "#dd2222"
 				},
 				{
 					"id": "unpublished",
@@ -378,7 +384,7 @@
 							"world": "<a target='_blank' href='https://coppermind.net/wiki/Sel'>Sel</a>",
 							"system": "<a target='_blank' href='https://coppermind.net/wiki/Selish_system'>Selish system</a>",
 							"chronology": "<a target='_blank' href='https://wob.coppermind.net/events/395/#e13072'>A short time jump is planned</a> between Elantris books, with the original main characters still being alive. But this is <a target='_blank' href='https://wob.coppermind.net/events/509/#e15991'>subject to change.</a>",
-							"publication": "<a target='_blank' href='https://www.brandonsanderson.com/state-of-the-sanderson-2023/'>Summer 2029 (planned)</a>",
+							"publication": "<a target='_blank' href='https://www.brandonsanderson.com/blogs/blog/state-of-the-sanderson-2024'>Summer 2029 (planned)</a>",
 							"sorting": {
 								"chronology": 3.2,
 								"publication": 2029.06
@@ -398,7 +404,7 @@
 							"world": "<a target='_blank' href='https://coppermind.net/wiki/Sel'>Sel</a>",
 							"system": "<a target='_blank' href='https://coppermind.net/wiki/Selish_system'>Selish system</a>",
 							"chronology": "<a target='_blank' href='https://wob.coppermind.net/events/395/#e13072'>A short time jump is planned</a> between Elantris books, with the original main characters still being alive. But this is <a target='_blank' href='https://wob.coppermind.net/events/509/#e15991'>subject to change.</a>",
-							"publication": "<a target='_blank' href='https://www.brandonsanderson.com/state-of-the-sanderson-2023/'>Summer 2030 (planned)</a>",
+							"publication": "<a target='_blank' href='https://www.brandonsanderson.com/blogs/blog/state-of-the-sanderson-2024'>Summer 2030 (planned)</a>",
 							"sorting": {
 								"chronology": 3.3,
 								"publication": 2030.06
@@ -983,13 +989,13 @@
 					"children": [
 						{
 							"id": "mb8",
-							"title": "Mistborn Era 3 Book 1",
-							"title2": "<a target='_blank' href='https://wob.coppermind.net/adv_search/?tags=mistborn+era+3'>Mistborn Era 3 Book 1</a>",
+							"title": "Ghostbloods 1",
+							"title2": "<a target='_blank' href='https://wob.coppermind.net/adv_search/?tags=mistborn+era+3'>Ghostbloods 1</a>",
 							"series": "<a target='_blank' href='https://coppermind.net/wiki/Mistborn_(series)'>Mistborn</a> (Era 3)",
 							"world": "<a target='_blank' href='https://coppermind.net/wiki/Scadrial'>Scadrial</a>",
 							"system": "<a target='_blank' href='https://coppermind.net/wiki/Scadrian_system'>Scadrian system</a>",
 							"chronology": "<a target='_blank' href='https://wob.coppermind.net/events/454-dragonmount-zoom-call/#e14582'>Fifty to seventy years after Mistborn Era 2. After Stormlight Archive book 10.</a> Prior to Mistborn Era 4.",
-							"publication": "<a target='_blank' href='https://www.brandonsanderson.com/state-of-the-sanderson-2023/'>December 2028 (planned)</a>",
+							"publication": "<a target='_blank' href='https://www.brandonsanderson.com/blogs/blog/state-of-the-sanderson-2024'>December 2028 (planned)</a>",
 							"sorting": {
 								"chronology": 10.1,
 								"publication": 2028.12
@@ -1003,13 +1009,13 @@
 						},
 						{
 							"id": "mb9",
-							"title": "Mistborn Era 3 Book 2",
-							"title2": "<a target='_blank' href='https://wob.coppermind.net/adv_search/?tags=mistborn+era+3'>Mistborn Era 3 Book 2</a>",
+							"title": "Ghostbloods 2",
+							"title2": "<a target='_blank' href='https://wob.coppermind.net/adv_search/?tags=mistborn+era+3'>Ghostbloods 2</a>",
 							"series": "<a target='_blank' href='https://coppermind.net/wiki/Mistborn_(series)'>Mistborn</a> (Era 3)",
 							"world": "<a target='_blank' href='https://coppermind.net/wiki/Scadrial'>Scadrial</a>",
 							"system": "<a target='_blank' href='https://coppermind.net/wiki/Scadrian_system'>Scadrian system</a>",
 							"chronology": "<a target='_blank' href='https://wob.coppermind.net/events/454-dragonmount-zoom-call/#e14582'>Fifty to seventy years after Mistborn Era 2. After Stormlight Archive book 10.</a> Prior to Mistborn Era 4.",
-							"publication": "<a target='_blank' href='https://www.brandonsanderson.com/state-of-the-sanderson-2023/'>December 2029 (planned)</a>",
+							"publication": "<a target='_blank' href='https://www.brandonsanderson.com/blogs/blog/state-of-the-sanderson-2024'>December 2029 (planned)</a>",
 							"sorting": {
 								"chronology": 10.2,
 								"publication": 2029.12
@@ -1023,13 +1029,13 @@
 						},
 						{
 							"id": "mb10",
-							"title": "Mistborn Era 3 Book 3",
-							"title2": "<a target='_blank' href='https://wob.coppermind.net/adv_search/?tags=mistborn+era+3'>Mistborn Era 3 Book 3</a>",
+							"title": "Ghostbloods 3",
+							"title2": "<a target='_blank' href='https://wob.coppermind.net/adv_search/?tags=mistborn+era+3'>Ghostbloods 3</a>",
 							"series": "<a target='_blank' href='https://coppermind.net/wiki/Mistborn_(series)'>Mistborn</a> (Era 3)",
 							"world": "<a target='_blank' href='https://coppermind.net/wiki/Scadrial'>Scadrial</a>",
 							"system": "<a target='_blank' href='https://coppermind.net/wiki/Scadrian_system'>Scadrian system</a>",
 							"chronology": "<a target='_blank' href='https://wob.coppermind.net/events/454-dragonmount-zoom-call/#e14582'>Fifty to seventy years after Mistborn Era 2. After Stormlight Archive book 10.</a> Prior to Mistborn Era 4.",
-							"publication": "<a target='_blank' href='https://www.brandonsanderson.com/state-of-the-sanderson-2023/'>December 2030 (planned)</a>",
+							"publication": "<a target='_blank' href='https://www.brandonsanderson.com/blogs/blog/state-of-the-sanderson-2024'>December 2030 (planned)</a>",
 							"sorting": {
 								"chronology": 10.3,
 								"publication": 2030.12
@@ -1048,12 +1054,71 @@
 					"children": [
 						{
 							"id": "mb11",
-							"title": "Mistborn Era 4 Book 1",
-							"title2": "<a target='_blank' href='https://wob.coppermind.net/adv_search/?tags=mistborn+era+4'>Mistborn Era 4 Book 1</a>",
-							"series": "<a target='_blank' href='https://coppermind.net/wiki/Mistborn_(series)'>Mistborn</a> (Era 4)",
+							"title": "Cyberpunk Mistborn 1",
+							"title2": "<a target='_blank' href='https://wob.coppermind.net/adv_search/?query=cyberpunk%2Bmistborn&date_from=2003-12-05&date_to=2019-11-20&speaker=&ordering=rank'>Cyberpunk Mistborn</a>",
+							"series": "<a target='_blank' href='https://coppermind.net/wiki/Mistborn_(series)'>Mistborn</a>",
 							"world": "<a target='_blank' href='https://coppermind.net/wiki/Scadrial'>Scadrial</a>",
 							"system": "<a target='_blank' href='https://coppermind.net/wiki/Scadrian_system'>Scadrian system</a>",
-							"chronology": "<a target='_blank' href='https://wob.coppermind.net/events/182/#e3884'>Mistborn Era 4 is the finale of the cosmere storyline.</a>",
+							"chronology": "A cyberpunk Mistborn series would be in a <a target='_blank' href='https://wob.coppermind.net/events/34/#e1782'>near-future setting</a>, between Eras 3 and 5.",
+							"sorting": {
+								"chronology": 11.1
+							},
+							"categories": [
+								"mistborn",
+								"unpublished",
+								"future-plan",
+								"novel"
+							]
+						},
+						{
+							"id": "mb12",
+							"title": "Cyberpunk Mistborn 2",
+							"title2": "<a target='_blank' href='https://wob.coppermind.net/adv_search/?query=cyberpunk%2Bmistborn&date_from=2003-12-05&date_to=2019-11-20&speaker=&ordering=rank'>Cyberpunk Mistborn</a>",
+							"series": "<a target='_blank' href='https://coppermind.net/wiki/Mistborn_(series)'>Mistborn</a>",
+							"world": "<a target='_blank' href='https://coppermind.net/wiki/Scadrial'>Scadrial</a>",
+							"system": "<a target='_blank' href='https://coppermind.net/wiki/Scadrian_system'>Scadrian system</a>",
+							"chronology": "A cyberpunk Mistborn series would be in a <a target='_blank' href='https://wob.coppermind.net/events/34/#e1782'>near-future setting</a>, between Eras 3 and 5.",
+							"sorting": {
+								"chronology": 11.2
+							},
+							"categories": [
+								"mistborn",
+								"unpublished",
+								"future-plan",
+								"novel"
+							]
+						},
+						{
+							"id": "mb13",
+							"title": "Cyberpunk Mistborn 3",
+							"title2": "<a target='_blank' href='https://wob.coppermind.net/adv_search/?query=cyberpunk%2Bmistborn&date_from=2003-12-05&date_to=2019-11-20&speaker=&ordering=rank'>Cyberpunk Mistborn</a>",
+							"series": "<a target='_blank' href='https://coppermind.net/wiki/Mistborn_(series)'>Mistborn</a>",
+							"world": "<a target='_blank' href='https://coppermind.net/wiki/Scadrial'>Scadrial</a>",
+							"system": "<a target='_blank' href='https://coppermind.net/wiki/Scadrian_system'>Scadrian system</a>",
+							"chronology": "A cyberpunk Mistborn series would be in a <a target='_blank' href='https://wob.coppermind.net/events/34/#e1782'>near-future setting</a>, between Eras 3 and 5.",
+							"sorting": {
+								"chronology": 11.3
+							},
+							"categories": [
+								"mistborn",
+								"unpublished",
+								"future-plan",
+								"novel"
+							]
+						}
+					]
+				},
+				{
+					"label": "Mistborn<br>Era 5",
+					"children": [
+						{
+							"id": "mb14",
+							"title": "Space Age Mistborn 1",
+							"title2": "<a target='_blank' href='https://wob.coppermind.net/adv_search/?tags=mistborn+era+4'>Space Age Mistborn 1</a>",
+							"series": "<a target='_blank' href='https://coppermind.net/wiki/Mistborn_(series)'>Mistborn</a> (Era 5)",
+							"world": "<a target='_blank' href='https://coppermind.net/wiki/Scadrial'>Scadrial</a>",
+							"system": "<a target='_blank' href='https://coppermind.net/wiki/Scadrian_system'>Scadrian system</a>",
+							"chronology": "<a target='_blank' href='https://wob.coppermind.net/events/182/#e3884'>Mistborn Era 5 is the finale of the cosmere storyline.</a>",
 							"sorting": {
 								"chronology": 13.1
 							},
@@ -1065,13 +1130,13 @@
 							]
 						},
 						{
-							"id": "mb12",
-							"title": "Mistborn Era 4 Book 2",
-							"title2": "<a target='_blank' href='https://wob.coppermind.net/adv_search/?tags=mistborn+era+4'>Mistborn Era 4 Book 2</a>",
-							"series": "<a target='_blank' href='https://coppermind.net/wiki/Mistborn_(series)'>Mistborn</a> (Era 4)",
+							"id": "mb15",
+							"title": "Space Age Mistborn 2",
+							"title2": "<a target='_blank' href='https://wob.coppermind.net/adv_search/?tags=mistborn+era+4'>Space Age Mistborn 2</a>",
+							"series": "<a target='_blank' href='https://coppermind.net/wiki/Mistborn_(series)'>Mistborn</a> (Era 5)",
 							"world": "<a target='_blank' href='https://coppermind.net/wiki/Scadrial'>Scadrial</a>",
 							"system": "<a target='_blank' href='https://coppermind.net/wiki/Scadrian_system'>Scadrian system</a>",
-							"chronology": "<a target='_blank' href='https://wob.coppermind.net/events/182/#e3884'>Mistborn Era 4 is the finale of the cosmere storyline.</a>",
+							"chronology": "<a target='_blank' href='https://wob.coppermind.net/events/182/#e3884'>Mistborn Era 5 is the finale of the cosmere storyline.</a>",
 							"sorting": {
 								"chronology": 13.2
 							},
@@ -1083,13 +1148,13 @@
 							]
 						},
 						{
-							"id": "mb13",
-							"title": "Mistborn Era 4 Book 3",
-							"title2": "<a target='_blank' href='https://wob.coppermind.net/adv_search/?tags=mistborn+era+4'>Mistborn Era 4 Book 3</a>",
-							"series": "<a target='_blank' href='https://coppermind.net/wiki/Mistborn_(series)'>Mistborn</a> (Era 4)",
+							"id": "mb16",
+							"title": "Space Age Mistborn 3",
+							"title2": "<a target='_blank' href='https://wob.coppermind.net/adv_search/?tags=mistborn+era+4'>Space Age Mistborn 3</a>",
+							"series": "<a target='_blank' href='https://coppermind.net/wiki/Mistborn_(series)'>Mistborn</a> (Era 5)",
 							"world": "<a target='_blank' href='https://coppermind.net/wiki/Scadrial'>Scadrial</a>",
 							"system": "<a target='_blank' href='https://coppermind.net/wiki/Scadrian_system'>Scadrian system</a>",
-							"chronology": "<a target='_blank' href='https://wob.coppermind.net/events/182/#e3884'>Mistborn Era 4 is the finale of the cosmere storyline.</a>",
+							"chronology": "<a target='_blank' href='https://wob.coppermind.net/events/182/#e3884'>Mistborn Era 5 is the finale of the cosmere storyline.</a>",
 							"sorting": {
 								"chronology": 13.3
 							},
@@ -1117,24 +1182,6 @@
 								"novella",
 								"unpublished",
 								"potential-plan"
-							]
-						},
-						{
-							"id": "mb-cyberpunk",
-							"title": "Cyberpunk Mistborn",
-							"title2": "<a target='_blank' href='https://wob.coppermind.net/adv_search/?query=cyberpunk%2Bmistborn&date_from=2003-12-05&date_to=2019-11-20&speaker=&ordering=rank'>Cyberpunk Mistborn</a>",
-							"series": "<a target='_blank' href='https://coppermind.net/wiki/Mistborn_(series)'>Mistborn</a>",
-							"world": "<a target='_blank' href='https://coppermind.net/wiki/Scadrial'>Scadrial</a>",
-							"system": "<a target='_blank' href='https://coppermind.net/wiki/Scadrian_system'>Scadrian system</a>",
-							"chronology": "A cyberpunk Mistborn series would be in a <a target='_blank' href='https://wob.coppermind.net/events/34/#e1782'>near-future setting</a>, between Eras 3 and 4.",
-							"sorting": {
-								"chronology": 10.7
-							},
-							"categories": [
-								"mistborn",
-								"unpublished",
-								"potential-plan",
-								"novel"
 							]
 						}
 					]
@@ -1368,11 +1415,6 @@
 									"description": "<a target='_blank' href='https://coppermind.net/wiki/Mraize'>Mraize</a>'s collection in <a target='_blank' href='https://coppermind.net/wiki/Summary:Words_of_Radiance#Chapter_43:_The_Ghostbloods'>Chapter 43</a> includes a vial of sand from <a target='_blank' href='https://coppermind.net/wiki/Taldain'>Taldain</a>."
 								},
 								{
-									"target": "jasnah",
-									"type": "major",
-									"description": "A deleted scene about <a target='_blank' href='https://coppermind.net/wiki/Jasnah_Kholin'>Jasnah</a> that contains some canonical elements."
-								},
-								{
 									"target": "traveler",
 									"type": "minor",
 									"description": "The man <a target='_blank' href='https://coppermind.net/wiki/Hoid'>Hoid</a> speaks with is <a target='_blank' href='https://coppermind.net/wiki/Frost'>Frost</a>, who responded to <a target='_blank' href='https://coppermind.net/wiki/Hoid'>Hoid</a> with similar opinions in the <a target='_blank' href='https://coppermind.net/wiki/Words_of_Radiance/Epigraphs#The_Second_Letter'>Words of Radiance Part 4 epigraphs</a>."
@@ -1392,6 +1434,51 @@
 									"type": "egg",
 									"description": "<a target='_blank' href='https://coppermind.net/wiki/Lumar'>Lumar</a> is a stop on the <a target='_blank' href='https://coppermind.net/wiki/Iriali'>Iriali</a> 'Long Trail' sometime after they leave <a target='_blank' href='https://coppermind.net/wiki/Roshar'>Roshar</a>. <a target='_blank' href='https://coppermind.net/wiki/Hoid'>Hoid</a> states that the weather patterns on <a target='_blank' href='https://coppermind.net/wiki/Lumar'>Lumar</a> 'aren't specifically <a target='_blank' href='https://coppermind.net/wiki/Investiture'>Invested</a>' and 'aren't self-aware' in the way that <a target='_blank' href='https://coppermind.net/wiki/highstorm'>highstorms</a> are. <a target='_blank' href='https://coppermind.net/wiki/Hoid'>Hoid</a> makes a metaphor about loaning one's best flute only to people who can be trusted with it, seeming to make a gibe at <a target='_blank' href='https://coppermind.net/wiki/Kaladin'>Kaladin</a> for losing his."
 								}
+							]
+						},
+						{
+							"id": "elsecaller",
+							"title": "Elsecaller",
+							"title2": "<a target='_blank' href='https://coppermind.net/wiki/Elsecaller_(short_story)'>Elsecaller</a>",
+							"series": "<a target='_blank' href='https://coppermind.net/wiki/The_Stormlight_Archive'>Stormlight Archive</a>",
+							"world": "<a target='_blank' href='https://coppermind.net/wiki/Roshar'>Roshar</a>",
+							"system": "<a target='_blank' href='https://coppermind.net/wiki/Rosharan_system'>Rosharan system</a>",
+							"chronology": "Occurs concurrently with Words of Radiance.",
+							"publication": "December 2024",
+							"link": "An early partial draft, written by Sanderson, was <a target='_blank' href='https://www.tor.com/2014/08/06/stormlight-archive-scene-after-words-of-radiance'>posted online</a> in August 2014.</a>",
+							"padding": 12,
+							"sorting": {
+								"chronology": 7.021,
+								"order": 2.421,
+								"publication": 2024.121
+							},
+							"categories": [
+								"stormlight",
+								"short",
+								"phase2",
+								"published"
+							]
+						},
+						{
+							"id": "lopen",
+							"title": "King Lopen",
+							"title2": "<a target='_blank' href='https://coppermind.net/wiki/King_Lopen_the_First_of_Alethkar'>King Lopen the First of Alethkar</a>",
+							"series": "<a target='_blank' href='https://coppermind.net/wiki/The_Stormlight_Archive'>Stormlight Lost Tales</a>",
+							"world": "<a target='_blank' href='https://coppermind.net/wiki/Roshar'>Roshar</a>",
+							"system": "<a target='_blank' href='https://coppermind.net/wiki/Rosharan_system'>Rosharan system</a>",
+							"chronology": "Occurs concurrently with the final events of Words of Radiance.",
+							"publication": "December 2024",
+							"padding": 12,
+							"sorting": {
+								"chronology": 7.022,
+								"order": 2.422,
+								"publication": 2024.122
+							},
+							"categories": [
+								"stormlight",
+								"short",
+								"phase2",
+								"published"
 							]
 						},
 						{
@@ -1429,25 +1516,6 @@
 									"type": "minor",
 									"description": "<a target='_blank' href='https://coppermind.net/wiki/Masaka'>Masaka</a> is a <a target='_blank' href='https://coppermind.net/wiki/Sleepless'>Sleepless</a>."
 								}
-							]
-						},
-						{
-							"id": "lopen",
-							"title": "King Lopen the First",
-							"title2": "<a target='_blank' href='https://wob.coppermind.net/adv_search/?tags=king+lopen+the+first+of+alethkar'>King Lopen the First of Alethkar</a>",
-							"series": "<a target='_blank' href='https://coppermind.net/wiki/The_Stormlight_Archive'>Stormlight Archive</a>",
-							"world": "<a target='_blank' href='https://coppermind.net/wiki/Roshar'>Roshar</a>",
-							"system": "<a target='_blank' href='https://coppermind.net/wiki/Rosharan_system'>Rosharan system</a>",
-							"chronology": "<a target='_blank' href='https://wob.coppermind.net/events/31/#e1703'>Occurs concurrently with the final events of Words of Radiance.</a>",
-							"padding": 12,
-							"sorting": {
-								"chronology": 7.022
-							},
-							"categories": [
-								"stormlight",
-								"short",
-								"future-plan",
-								"unpublished"
 							]
 						},
 						{
@@ -1589,21 +1657,22 @@
 						},
 						{
 							"id": "sa5",
-							"title": "Wind and Truth (2024)",
+							"title": "Wind and Truth",
 							"title2": "Wind and Truth",
 							"series": "<a target='_blank' href='https://coppermind.net/wiki/The_Stormlight_Archive'>Stormlight Archive</a>",
 							"world": "<a target='_blank' href='https://coppermind.net/wiki/Roshar'>Roshar</a>",
 							"system": "<a target='_blank' href='https://coppermind.net/wiki/Rosharan_system'>Rosharan system</a>",
-							"publication": "<a target='_blank' href='https://www.brandonsanderson.com/state-of-the-sanderson-2023/'>December 2024</a>",
-							"chronology": "<a target='_blank' href='https://wob.coppermind.net/events/309/#e10273'>Occurs after Mistborn Era 1 and Warbreaker but before Mistborn Era 2.</a>",
+							"publication": "December 2024",
+							"chronology": "<a target='_blank' href='https://wob.coppermind.net/events/309/#e10273'>Occurs after Mistborn Era 1 and Warbreaker but before Mistborn Era 2.</a> Some events in the finale overlap with Mistborn Era 2.",
 							"sorting": {
+								"order": 2.47,
 								"publication": 2024.12,
 								"chronology": 7.05
 							},
 							"categories": [
 								"stormlight",
-								"unpublished",
-								"forthcoming",
+								"published",
+								"phase2",
 								"novel"
 							]
 						},
@@ -1616,7 +1685,7 @@
 							"system": "<a target='_blank' href='https://coppermind.net/wiki/Rosharan_system'>Rosharan system</a>",
 							"padding": 12,
 							"chronology": "<a target='_blank' href='https://www.brandonsanderson.com/state-of-the-sanderson-2020/'>Fills in what happened with Rock during and after the events of Rhythm of War.</a>",
-							"publication": "<a target='_blank' href='https://wob.coppermind.net/events/514/#e16080'>December 2026 (planned).</a>",
+							"publication": "<a target='_blank' href='https://www.brandonsanderson.com/blogs/blog/state-of-the-sanderson-2024'>December 2026 (tentative).</a>",
 							"sorting": {
 								"publication": 2026.12,
 								"chronology": 7.045
@@ -1636,7 +1705,7 @@
 							"world": "<a target='_blank' href='https://coppermind.net/wiki/Roshar'>Roshar</a>",
 							"system": "<a target='_blank' href='https://coppermind.net/wiki/Rosharan_system'>Rosharan system</a>",
 							"chronology": "<a target='_blank' href='https://wob.coppermind.net/events/61/#e1300'>There's a roughly 15 year gap between Stormlight 5 and 6.</a> <a target='_blank' href='https://wob.coppermind.net/events/454-dragonmount-zoom-call/#e14582'>Occurs after Mistborn Era 2 and before Mistborn Era 3.</a>",
-							"publication": "<a target='_blank' href='https://wob.coppermind.net/events/509/#e15991'>2032 (best guess)</a>",
+							"publication": "<a target='_blank' href='https://www.brandonsanderson.com/blogs/blog/state-of-the-sanderson-2024'>December 2031 (planned)</a>",
 							"sorting": {
 								"chronology": 9.06,
 								"publication": 2032
@@ -1721,6 +1790,27 @@
 							]
 						},
 						{
+							"id": "chasmfriends",
+							"title": "Chasmfriends",
+							"title2": "<a target='_blank' href='https://coppermind.net/wiki/Chasmfriends'>Chasmfriends</a>",
+							"series": "<a target='_blank' href='https://coppermind.net/wiki/The_Stormlight_Archive'>Stormlight Lost Tales</a>",
+							"world": "<a target='_blank' href='https://coppermind.net/wiki/Roshar'>Roshar</a>",
+							"system": "<a target='_blank' href='https://coppermind.net/wiki/Rosharan_system'>Rosharan system</a>",
+							"chronology": "Occurs concurrently with the final events of Words of Radiance.",
+							"publication": "December 2024",
+							"padding": 12,
+							"sorting": {
+								"order": 2.423,
+								"publication": 2024.123
+							},
+							"categories": [
+								"stormlight",
+								"short",
+								"apocryphal",
+								"other-pub"
+							]
+						},
+						{
 							"id": "tdatd",
 							"title": "The Dog and the Dragon",
 							"title2": "<a target='_blank' href='https://www.brandonsanderson.com/state-of-the-sanderson-2020/'>The Dog and the Dragon picture book</a>",
@@ -1749,21 +1839,6 @@
 								"potential-plan",
 								"graphic"
 							]
-						},
-						{
-							"id": "sa-art",
-							"title": "Stormlight Archive art book",
-							"title2": "<a target='_blank' href='https://wob.coppermind.net/events/396/#e13175'>Stormlight Archive art book</a>",
-							"series": "<a target='_blank' href='https://coppermind.net/wiki/The_Stormlight_Archive'>Stormlight Archive</a>",
-							"world": "<a target='_blank' href='https://coppermind.net/wiki/Roshar'>Roshar</a>",
-							"system": "<a target='_blank' href='https://coppermind.net/wiki/Rosharan_system'>Rosharan system</a>",
-							"padding": 12,
-							"categories": [
-								"stormlight",
-								"unpublished",
-								"potential-plan",
-								"graphic"
-							]
 						}
 					]
 				}
@@ -1777,28 +1852,6 @@
 					"label": "White Sand",
 					"color": "#9e9957",
 					"children": [
-						{
-							"id": "wsn",
-							"title": "White Sand (2025)",
-							"title2": "<a target='_blank' href='https://coppermind.net/wiki/White_Sand'>White Sand novel</a>",
-							"series": "<a target='_blank' href='https://coppermind.net/wiki/White_Sand'>White Sand</a>",
-							"world": "<a target='_blank' href='https://coppermind.net/wiki/Taldain'>Taldain</a>",
-							"system": "<a target='_blank' href='https://coppermind.net/wiki/Taldain_system'>Taldain system</a>",
-							"au": "Excerpt included in <a target='_blank' href='https://coppermind.net/wiki/Arcanum_Unbounded'>Arcanum Unbounded</a>.",
-							"publication": "<a target='_blank' href='https://www.brandonsanderson.com/state-of-the-sanderson-2023/'>December 2025 (planned)</a>",
-							"chronology": "<a target='_blank' href='https://wob.coppermind.net/events/182/#e3878'>White Sand occurs prior to Elantris.</a>",
-							"sorting": {
-								"order": 1.51,
-								"publication": 2025.12,
-								"chronology": 2.101
-							},
-							"categories": [
-								"white-sand",
-								"unpublished",
-								"future-plan",
-								"novel"
-							]
-						},
 						{
 							"id": "wsgn",
 							"title": "White Sand (graphic novels)",
@@ -1854,6 +1907,27 @@
 									"type": "egg",
 									"description": "<a target='_blank' href='https://coppermind.net/wiki/Canticle'>Canticle's</a> sun is <a target='_blank' href='https://coppermind.net/wiki/Investiture'>Invested</a> similar to <a target='_blank' href='https://coppermind.net/wiki/Taldain_system'>Taldain's</a>."
 								}
+							]
+						},
+						{
+							"id": "wsn",
+							"title": "White Sand (prose rewrite)",
+							"title2": "<a target='_blank' href='https://coppermind.net/wiki/White_Sand'>White Sand (prose rewrite)</a>",
+							"series": "<a target='_blank' href='https://coppermind.net/wiki/White_Sand'>White Sand</a>",
+							"world": "<a target='_blank' href='https://coppermind.net/wiki/Taldain'>Taldain</a>",
+							"system": "<a target='_blank' href='https://coppermind.net/wiki/Taldain_system'>Taldain system</a>",
+							"au": "Excerpt included in <a target='_blank' href='https://coppermind.net/wiki/Arcanum_Unbounded'>Arcanum Unbounded</a>.",
+							"publication": "<a target='_blank' href='https://www.brandonsanderson.com/state-of-the-sanderson-2023/'>Originally planned for December 2025.</a> Delayed. <a target='_blank' href='https://www.brandonsanderson.com/blogs/blog/state-of-the-sanderson-2024'>Current plans unknown.</a>",
+							"chronology": "<a target='_blank' href='https://wob.coppermind.net/events/182/#e3878'>White Sand occurs prior to Elantris.</a>",
+							"sorting": {
+								"order": 1.51,
+								"chronology": 2.101
+							},
+							"categories": [
+								"white-sand",
+								"unpublished",
+								"future-plan",
+								"novel"
 							]
 						},
 						{
@@ -1982,7 +2056,7 @@
 							"system": "<a target='_blank' href='https://coppermind.net/wiki/Drominad_system'>Drominad system</a>",
 							"au": "Included in <a target='_blank' href='https://coppermind.net/wiki/Arcanum_Unbounded'>Arcanum Unbounded</a>.",
 							"publication": "June 2014",
-							"chronology": "<a target='_blank' href='https://wob.coppermind.net/events/60/#e6664'>Shortly before Mistborn Era 4.</a>",
+							"chronology": "<a target='_blank' href='https://wob.coppermind.net/events/60/#e6664'>Shortly before Mistborn Era 5.</a>",
 							"padding": 12,
 							"sorting": {
 								"order": 1.7,
@@ -2025,28 +2099,47 @@
 							"world": "<a target='_blank' href='https://coppermind.net/wiki/First_of_the_Sun'>First of the Sun</a>",
 							"system": "<a target='_blank' href='https://coppermind.net/wiki/Drominad_system'>Drominad system</a>",
 							"chronology": "Five years after Sixth of the Dusk novella.",
+							"publication": "<a target='_blank' href='https://www.brandonsanderson.com/blogs/blog/state-of-the-sanderson-2024'>Fall 2025 (digital earlier)</a>",
 							"sorting": {
 								"order": 3.20,
-								"publication": 2025.04,
+								"publication": 2025.09,
 								"chronology": 13.02
 							},
 							"link": "<a target='_blank' href='https://wob.coppermind.net/events/533-secret-project-5-reveal-and-livestream/>Excerpts on Arcanum.</a>",
 							"categories": [
 								"no-series",
-								"novel",
-								"forthcoming",
-								"future-plan"
+								"novel"
 							],
 							"connections": [
 								{
-									"target": "mb6",
+									"target": "sa3",
 									"type": "minor",
-									"description": "<a target='_blank' href='https://coppermind.net/wiki/Scadrial'>Scadrian</a> spaceships powered by <a target='_blank' href='https://coppermind.net/wiki/Allomancy'>Allomancy</a> are seen."
+									"description": "<a target='_blank' href='https://coppermind.net/wiki/Mraize'>Mraize</a>'s chicken, mentioned in <a target='_blank' href='https://coppermind.net/wiki/Summary:Oathbringer#Chapter_22:_The_Darkness_Within'>Chapter 22</a>, is an <a target='_blank' href='https://coppermind.net/wiki/Aviar'>Aviar</a>. <a target='_blank' href='https://coppermind.net/wiki/Patji'>Patji</a> is referenced obliquely in <a target='_blank' href='https://coppermind.net/wiki/Autonomy'>Autonomy</a>'s <a target='_blank' href='https://coppermind.net/wiki/Letters#Second_Oathbringer_Letter'>letter</a> to <a target='_blank' href='https://coppermind.net/wiki/Hoid'>Hoid</a> in the <a target='_blank' href='https://coppermind.net/wiki/Oathbringer/Epigraphs#Letters'>Part 2 epigraphs</a>."
 								},
 								{
-									"target": "tsm",
+									"target": "au",
+									"type": "minor",
+									"description": "The <a target='_blank' href='https://coppermind.net/wiki/Drominad_system'>Drominad system</a> essay discusses <a target='_blank' href='https://coppermind.net/wiki/First_of_the_Sun'>First of the Sun</a> and its magic."
+								},
+								{
+									"target": "sa4",
+									"type": "minor",
+									"description": "<a target='_blank' href='https://coppermind.net/wiki/Gereh'>Gereh</a> has an <a target='_blank' href='https://coppermind.net/wiki/Aviar'>Aviar</a>, which <a target='_blank' href='https://coppermind.net/wiki/Lift'>Lift</a> comes into possession of."
+								},
+								{
+									"target": "mb7",
+									"type": "significant",
+									"description": "The <a target='_blank' href='https://coppermind.net/wiki/Summary:Isles_of_the_Emberdark#Chapter_35'>Ones Above</a> are actually the <a target='_blank' href='https://coppermind.net/wiki/Malwish'>Malwish</a>"
+								},
+								{
+									"target": "sa5",
+									"type": "significant",
+									"description": "An emissary of the <a target='_blank' href='https://coppermind.net/wiki/Skybreaker'>Skybreakers</a> approaches the First of the Sun, and indicates they are in conflict with the Scadrians"
+								},
+								{
+									"target": "tress",
 									"type": "egg",
-									"description": "<a target='_blank' href='https://coppermind.net/wiki/Scadrial'>Scadrians</a> and <a target='_blank' href='https://coppermind.net/wiki/Roshar'>Rosharan</a> <a target='_blank' href='https://coppermind.net/wiki/Surgebinding'>Surgebinders</a> are first seen to be in conflict."
+									"description": "<a target='_blank' href='https://coppermind.net/wiki/Hoid'>Hoid</a> refers to a story about <a target='_blank' href='https://coppermind.net/wiki/Linji'>Linji</a>, likely a figure from <a target='_blank' href='https://coppermind.net/wiki/First_of_the_Sun'>First of the Sun</a>, who attempted to travel around the world without the use of <a target='_blank' href='https://coppermind.net/wiki/Aviar'>Aviar</a>. This reference strongly suggests that the audience listening to the story is from <a target='_blank' href='https://coppermind.net/wiki/First_of_the_Sun'>First of the Sun</a>."
 								}
 							]
 						}
@@ -2259,7 +2352,7 @@
 							"publication": "November 2016",
 							"chronology": "<a target='_blank' href='https://wob.coppermind.net/events/36/#e1491'>The essays were written before the events of Sixth of the Dusk.</a> They could potentially be as early as Mistborn Era 3.",
 							"sorting": {
-								"order": 2.5,
+								"order": 2.31,
 								"publication": 2016.11,
 								"chronology": 12.0
 							},
@@ -2293,11 +2386,7 @@
 									"description": "<a target='_blank' href='https://coppermind.net/wiki/Sigzil'>Nomad</a> sees a planetary guidebook and mentions films from <a target='_blank' href='https://coppermind.net/wiki/Silverlight'>Silverlight</a>. When seeking to enter the <a target='_blank' href='https://coppermind.net/wiki/TimeKeepers'>TimeKeepers'</a> spaceship, he cites the 'Refugee and Lost Expatriate Bill' under the '<a target='_blank' href='https://coppermind.net/wiki/Silverlight'>Silverlight</a> Codes of Interplanetary Conduct'. <a target='_blank' href='https://coppermind.net/wiki/Zellion'>Zellion</a> is said to be a <a target='_blank' href='https://coppermind.net/wiki/Yolen'>Yolish</a> name."
 								}
 							]
-						}
-					]
-				},
-				{
-					"children": [
+						},
 						{
 							"id": "tress",
 							"title": "Tress of the Emerald Sea",
@@ -2305,9 +2394,9 @@
 							"world": "<a target='_blank' href='https://coppermind.net/wiki/Lumar'>Lumar</a>",
 							"system": "Unknown",
 							"publication": "January 2023",
-							"chronology": "The story takes place three hundred years after the Iriali have departed Lumar. It also occurs after Stormlight Archive 1-5 (based on several references) in which the Iriali are present on Roshar still. It is unclear where the story falls relative to the Arcanum Unbounded essays, Sixth of the Dusk, and Mistborn Era 4.",
+							"chronology": "The story takes place three hundred years after the Iriali have departed Lumar. It also occurs after Stormlight Archive 1-5 (based on several references) in which the Iriali are present on Roshar still. It is unclear where the story falls relative to the Arcanum Unbounded essays, Sixth of the Dusk, and Mistborn Era 5.",
 							"sorting": {
-								"order": 3.11,
+								"order": 3.10,
 								"publication": 2023.01,
 								"chronology": 12.1
 							},
@@ -2336,11 +2425,7 @@
 									"description": "<a target='_blank' href='https://coppermind.net/wiki/Aether'>Zephyr aether</a> is referenced as a means of propulsion useful for spaceships."
 								}
 							]
-						}
-					]
-				},
-				{
-					"children": [
+						},
 						{
 							"id": "yumi",
 							"title": "Yumi and the Nightmare Painter",
@@ -2350,7 +2435,7 @@
 							"publication": "July 2023",
 							"chronology": "<a target='_blank' href='https://wob.coppermind.net/events/526/#e16420'>The story takes place later than everything else in the published Cosmere (as of December 2023) except for Sixth of the Dusk.</a>",
 							"sorting": {
-								"order": 3.12,
+								"order": 3.11,
 								"publication": 2023.07,
 								"chronology": 12.9
 							},
@@ -2374,11 +2459,7 @@
 									"description": "<a target='_blank' href='https://coppermind.net/wiki/Sigzil'>Nomad</a> appears to <a target='_blank' href='https://coppermind.net/wiki/Skipping'>Skip</a> to <a target='_blank' href='https://coppermind.net/wiki/UTol'>UTol</a>, the planetary neighbor of <a target='_blank' href='https://coppermind.net/wiki/Komashi'>Komashi</a>."
 								}
 							]
-						}
-					]
-				},
-				{
-					"children": [
+						},
 						{
 							"id": "tsm",
 							"title": "The Sunlit Man",
@@ -2386,9 +2467,9 @@
 							"world": "<a target='_blank' href='https://coppermind.net/wiki/Canticle'>Canticle</a>",
 							"system": "Unknown",
 							"publication": "October 2023",
-							"chronology": "The story takes place in the space age of the cosmere, at least a few hundred years after Mistborn Era 3. It is unclear where the story falls relative to the Arcanum Unbounded essays, Sixth of the Dusk, and Mistborn Era 4.",
+							"chronology": "The story takes place in the space age of the cosmere, at least a few hundred years after Mistborn Era 3. It is unclear where the story falls relative to the Arcanum Unbounded essays, Sixth of the Dusk, and Mistborn Era 5.",
 							"sorting": {
-								"order": 3.10,
+								"order": 3.12,
 								"publication": 2023.10,
 								"chronology": 12.3
 							},
@@ -2446,11 +2527,21 @@
 									"description": "The Silence Divine is set on <a target='_blank' href='https://coppermind.net/wiki/Ashyn'>Ashyn</a>, the world that the humans fled to <a target='_blank' href='https://coppermind.net/wiki/Roshar'>Roshar</a> from."
 								}
 							]
-						}
-					]
-				},
-				{
-					"children": [
+						},
+						{
+							"id": "ashyn2",
+							"title": "Untitled Ashyn Book",
+							"title2": "<a target='_blank' href='https://www.brandonsanderson.com/blogs/blog/state-of-the-sanderson-2024'>Unnamed Other Ashyn Book</a>",
+							"world": "Unknown",
+							"system": "Unknown",
+							"chronology": "Unknown",
+							"categories": [
+								"no-series",
+								"novel",
+								"unpublished",
+								"potential-plan"
+							]
+						},
 						{
 							"id": "tga",
 							"title": "The Grand Apparatus",
@@ -2464,11 +2555,7 @@
 								"unpublished",
 								"future-plan"
 							]
-						}
-					]
-				},
-				{
-					"children": [
+						},
 						{
 							"id": "dan",
 							"title": "Untitled Dan Cosmere novel",
@@ -2482,11 +2569,21 @@
 								"unpublished",
 								"future-plan"
 							]
-						}
-					]
-				},
-				{
-					"children": [
+						},
+						{
+							"id": "burrito",
+							"title": "Free Fall Burrito World",
+							"title2": "<a target='_blank' href='https://www.brandonsanderson.com/blogs/blog/state-of-the-sanderson-2024'>Free Fall Seven Layer Burrito World</a>",
+							"world": "Unknown",
+							"system": "Unknown",
+							"chronology": "Unknown",
+							"categories": [
+								"no-series",
+								"novel",
+								"unpublished",
+								"potential-plan"
+							]
+						},
 						{
 							"id": "silverlight",
 							"title": "Silverlight novella",
@@ -2499,20 +2596,16 @@
 								"unpublished",
 								"potential-plan"
 							]
-						}
-					]
-				},
-				{
-					"children": [
+						},
 						{
 							"id": "kite",
 							"title": "Magic Kites YA story",
 							"title2": "<a target='_blank' href='https://wob.coppermind.net/adv_search/?tags=kite+magic'>Kite-based magic story</a>",
 							"world": "Unknown",
 							"system": "Unknown",
-							"chronology": "<a target='_blank' href='https://wob.coppermind.net/events/379/#e12466'>Planned to take place between Mistborn Era 3 and 4.</a>",
+							"chronology": "<a target='_blank' href='https://wob.coppermind.net/events/379/#e12466'>Planned to take place between Mistborn Era 3 and 5.</a>",
 							"sorting": {
-								"chronology": 11.0
+								"chronology": 11.5
 							},
 							"categories": [
 								"no-series",
@@ -2557,7 +2650,7 @@
 								"white-sand",
 								"novel",
 								"apocryphal",
-								"noncanon"
+								"other-pub"
 							],
 							"connections": [
 								{
@@ -2582,7 +2675,7 @@
 							"categories": [
 								"no-series",
 								"apocryphal",
-								"noncanon",
+								"other-pub",
 								"novel"
 							],
 							"connections": [
@@ -2638,25 +2731,25 @@
 								"no-series",
 								"short",
 								"apocryphal",
-								"noncanon"
+								"other-pub"
 							]
 						},
 						{
 							"id": "dsp",
-							"title": "Dragonsteel Prime (2024)",
+							"title": "Dragonsteel Prime",
 							"title2": "<a target='_blank' href='https://coppermind.net/wiki/Dragonsteel_Prime'>Dragonsteel Prime</a>",
 							"world": "<a target='_blank' href='https://coppermind.net/wiki/Yolen'>Yolen</a>",
 							"system": "Yolish system",
-							"publication": "<a target='_blank' href='https://wob.coppermind.net/events/488/#e15395'>With the Words of Radiance leatherbound Kickstarter, postponed to 2024.</a>",
+							"publication": "First published with the Words of Radiance leatherbound Kickstarter in 2024.",
 							"sorting": {
-								"order": 8.90,
-								"publication": 2024.04
+								"order": 3.15,
+								"publication": 2024.03
 							},
 							"categories": [
 								"dragonsteel",
 								"novel",
 								"apocryphal",
-								"noncanon"
+								"other-pub"
 							]
 						},
 						{
@@ -2676,7 +2769,7 @@
 								"stormlight",
 								"novel",
 								"apocryphal",
-								"noncanon"
+								"other-pub"
 							]
 						},
 						{
@@ -2698,7 +2791,7 @@
 								"stormlight",
 								"short",
 								"apocryphal",
-								"noncanon"
+								"other-pub"
 							]
 						},
 						{
@@ -2726,7 +2819,7 @@
 								"no-series",
 								"short",
 								"apocryphal",
-								"noncanon"
+								"other-pub"
 							]
 						}
 					]
