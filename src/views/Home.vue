@@ -14,6 +14,13 @@
   >
   </Legend>
   <CircleDiagram
+    v-if="viewMode === 'circular'"
+    :entries="entries"
+    :connection-types="connectionTypes"
+    :labels="entries === books ? labels : []"
+  />
+  <LinearDiagram
+    v-else-if="viewMode === 'linear'"
     :entries="entries"
     :connection-types="connectionTypes"
     :labels="entries === books ? labels : []"
@@ -25,6 +32,7 @@
 <script>
 import { mapState } from 'vuex';
 import CircleDiagram from '@/components/CircleDiagram.vue';
+import LinearDiagram from '@/components/LinearDiagram.vue';
 import loader from '@/loader';
 import Legend from '@/components/Legend.vue';
 import InfoBox from '@/components/InfoBox.vue';
@@ -65,6 +73,7 @@ export default {
     InfoBox,
     Legend,
     CircleDiagram,
+    LinearDiagram,
   },
   data() {
     return {
@@ -77,7 +86,13 @@ export default {
       labels: [],
     };
   },
-  computed: mapState(['selectedEntry']),
+  computed: {
+    ...mapState(['selectedEntry']),
+    viewMode() {
+      const mode = this.$route.query.view;
+      return mode === 'linear' ? 'linear' : 'circular';
+    },
+  },
   async mounted() {
     const result = await (await fetch('./data.json')).json();
     this.loadData(result);

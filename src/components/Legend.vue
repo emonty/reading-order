@@ -63,6 +63,13 @@
       <div class="legend-options">
         <h2>Options</h2>
         <span class="legend-options-item">
+          <label for="view-mode">View</label>
+          <select id="view-mode" @change="changeViewMode">
+            <option value="circular" :selected="selectedViewMode === 'circular'">Circular</option>
+            <option value="linear" :selected="selectedViewMode === 'linear'">Linear</option>
+          </select>
+        </span>
+        <span class="legend-options-item">
           <label for="sort">Order by</label>
           <select id="sort" @change="changeSort">
             <option :value="null" :selected="selectedOrder === null">Series</option>
@@ -157,6 +164,10 @@ export default {
     hideCompletely() {
       return this.$route.query['hide-ui'] === 'true';
     },
+    selectedViewMode() {
+      const mode = this.$route.query.view;
+      return mode === 'linear' ? 'linear' : 'circular';
+    },
   },
   watch: {
     selectedOrder(newOrder) {
@@ -246,6 +257,14 @@ export default {
         this.$router.replace({ query: { ...this.$route.query, order: undefined } });
       } else {
         this.$router.replace({ query: { ...this.$route.query, order: event.target.value } });
+      }
+    },
+    changeViewMode(event) {
+      const mode = event.target.value;
+      if (mode === 'circular') {
+        this.$router.replace({ query: { ...this.$route.query, view: undefined } });
+      } else {
+        this.$router.replace({ query: { ...this.$route.query, view: mode } });
       }
     },
     updateRoute(category, elements, trigger) {
