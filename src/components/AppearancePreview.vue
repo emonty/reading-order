@@ -1,29 +1,43 @@
 <template>
-<div
-  :class="['appearance-preview', {'appearance-preview-active': appearance.active}]"
-  v-tooltip.left="{
-    content: appearance.details,
-    trigger: 'click hover',
-    autoHide: false,
-    hideOnTargetClick: false,
-    boundariesElement: 'viewport'
-  }"
->
-  <input type="checkbox" :id="`chk-appearance-${appearance.id}`" v-model="appearance.active">
-  <label :for="`chk-appearance-${appearance.id}`">
-    <svg width="18" height="18" viewBox="0 0 18 18" class="appearance-preview-icon">
-      <circle r="9" cx="9" cy="9" :fill="appearance.color || '#fafafa'"></circle>
-      <text
-        x="9" y="9"
-        dominant-baseline="central" text-anchor="middle"
-        font-size="0.8rem"
+  <div
+    v-tooltip.left="{
+      content: appearance.details,
+      triggers: ['hover', 'click'],
+      html: true,
+    }"
+    :class="['appearance-preview', {'appearance-preview-active': appearance.active}]"
+  >
+    <input
+      :id="`chk-appearance-${appearance.id}`"
+      v-model="appearance.active"
+      type="checkbox"
+    >
+    <label :for="`chk-appearance-${appearance.id}`">
+      <svg
+        width="18"
+        height="18"
+        viewBox="0 0 18 18"
+        class="appearance-preview-icon"
       >
-        {{ appearance.initial }}
-      </text>
-    </svg>
-    {{ appearance.description }}
-  </label>
-</div>
+        <circle
+          r="9"
+          cx="9"
+          cy="9"
+          :fill="appearance.color || '#fafafa'"
+        />
+        <text
+          x="9"
+          y="9"
+          dominant-baseline="central"
+          text-anchor="middle"
+          font-size="0.8rem"
+        >
+          {{ appearance.initial }}
+        </text>
+      </svg>
+      {{ appearance.description }}
+    </label>
+  </div>
 </template>
 
 <script>

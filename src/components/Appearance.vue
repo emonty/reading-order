@@ -1,29 +1,30 @@
 <template>
-<g
-  :class="['appearance', `appearance-${appearance.type}`]"
-  :transform="`translate(0, ${-position}) rotate(${rotation})`"
-  :style="{'--appearance-color': appearance.ref.color}"
-  v-tooltip="{
-    content: showSpoilers
-      ? appearance.description
-      : 'Spoilers ahead! Enable spoilers in the options to the right to see them!',
-    autoHide: false,
-    hideOnTargetClick: false,
-    trigger: 'click hover',
-  }"
->
-  <circle r="10"></circle>
-  <text
-    dominant-baseline="central" text-anchor="middle"
-    font-size="0.8rem"
+  <g
+    v-tooltip="{
+      content: showSpoilers
+        ? appearance.description
+        : 'Spoilers ahead! Enable spoilers in the options to the right to see them!',
+      triggers: ['click', 'hover'],
+      html: true,
+    }"
+    :class="['appearance', `appearance-${appearance.type}`]"
+    :transform="`translate(0, ${-position}) rotate(${rotation})`"
+    :style="{'--appearance-color': appearance.ref.color}"
   >
-    {{ appearance.ref.initial }}
-  </text>
-</g>
+    <circle r="10" />
+    <text
+      dominant-baseline="central"
+      text-anchor="middle"
+      font-size="0.8rem"
+    >
+      {{ appearance.ref.initial }}
+    </text>
+  </g>
 </template>
 
 <script>
-import { mapState } from 'vuex';
+import { useAppStore } from '@/stores/app';
+import { storeToRefs } from 'pinia';
 
 export default {
   name: 'Appearance',
@@ -32,7 +33,11 @@ export default {
     position: Number,
     rotation: Number,
   },
-  computed: mapState(['showSpoilers']),
+  setup() {
+    const store = useAppStore();
+    const { showSpoilers } = storeToRefs(store);
+    return { showSpoilers };
+  },
 };
 </script>
 

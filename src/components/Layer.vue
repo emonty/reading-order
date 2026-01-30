@@ -1,36 +1,39 @@
 <template>
-<details class="layer" :open="layer.startCollapsed !== true">
-  <summary>
-    <span class="layer__header">
-      {{ layer.name }}
-      <EyeIcon
-        class="layer-toggle"
-        @click.prevent.stop
-        v-if="layer.active"
-      />
-      <EyeOffIcon
-        class="layer-toggle"
-        @click.prevent.stop="activate"
-        v-else
-      />
-    </span>
-  </summary>
-  <CategoryPreview
-    :category="category" :key="category.id"
-    @update-route="$emit('update-category-route', $event)"
-    v-for="category in layer.categories"
+  <details
+    class="layer"
+    :open="layer.startCollapsed !== true"
   >
-  </CategoryPreview>
-</details>
+    <summary>
+      <span class="layer__header">
+        {{ layer.name }}
+        <EyeIcon
+          v-if="layer.active"
+          class="layer-toggle"
+          @click.prevent.stop
+        />
+        <EyeOffIcon
+          v-else
+          class="layer-toggle"
+          @click.prevent.stop="activate"
+        />
+      </span>
+    </summary>
+    <CategoryPreview
+      v-for="category in layer.categories"
+      :key="category.id"
+      :category="category"
+      @update-route="$emit('update-category-route', $event)"
+    />
+  </details>
 </template>
 
 <script>
-import { EyeIcon, EyeOffIcon } from 'vue-feather-icons';
+import { Eye, EyeOff } from 'lucide-vue-next';
 import CategoryPreview from '@/components/CategoryPreview.vue';
 
 export default {
   name: 'Layer',
-  components: { CategoryPreview, EyeIcon, EyeOffIcon },
+  components: { CategoryPreview, EyeIcon: Eye, EyeOffIcon: EyeOff },
   props: {
     layer: Object,
   },

@@ -1,56 +1,73 @@
 <template>
-<g :class="[
-  'linear-arc',
-  {
-    'linear-arc-nodes-inactive': !connection.nodesActive,
-    'linear-arc-inactive': !connection.type.active,
-    'linear-arc-muted': mute
-  }
-]">
-  <Tooltip
-    :text="showSpoilers
-      ? connection.description
-      : 'Spoilers ahead! Enable spoilers in the options to the right to see them!'
-    "
-    :options="{
-      autoHide: false,
-      offset: 5,
-      hideOnTargetClick: false,
-      toggle: 'click hover',
-    }"
-    :follow-mouse="true"
-    :disabled="mute"
+  <g
+    :class="[
+      'linear-arc',
+      {
+        'linear-arc-nodes-inactive': !connection.nodesActive,
+        'linear-arc-inactive': !connection.type.active,
+        'linear-arc-muted': mute
+      }
+    ]"
   >
     <path
-      :d="path" class="linear-arc-background" fill="none" :style="bgStyles"
+      v-tooltip="{
+        content: showSpoilers
+          ? connection.description
+          : 'Spoilers ahead! Enable spoilers in the options to the right to see them!',
+        disabled: mute,
+        html: true,
+        triggers: ['hover', 'click'],
+        popperTriggers: ['hover'],
+        autoHide: true,
+      }"
+      :d="path"
+      class="linear-arc-background"
+      fill="none"
+      :style="bgStyles"
       @mouseover="beginLocalHighlight"
       @mouseout="endLocalHighlight"
-    ></path>
-  </Tooltip>
-  <path :d="path" class="linear-arc-foreground" fill="none" :style="styles"
-        :marker-end="`url(#triangle-${connection.type.id})`"></path>
-  <mask :id="`linear-arc-path-${connection.startId}.${connection.endId}`">
-    <path :d="path" class="linear-arc-foreground" fill="none" stroke="white"
-          :stroke-width="connection.type.width" marker-end="url(#triangle-mask)"></path>
-  </mask>
-  <g class="linear-arc-shine-container" v-if="highlight || localHighlight"
-     :mask="arcMask">
-    <rect :x="shineRectangle.x" :y="shineRectangle.y"
-          :width="shineRectangle.width" :height="shineRectangle.height"
-          fill="url(#shine-y)"
-          :style="{'--shine-distance': `${shineDistance}px`}"
-          class="linear-arc-shine linear-arc-shine-y"></rect>
+    />
+    <path
+      :d="path"
+      class="linear-arc-foreground"
+      fill="none"
+      :style="styles"
+      :marker-end="`url(#triangle-${connection.type.id})`"
+    />
+    <mask :id="`linear-arc-path-${connection.startId}.${connection.endId}`">
+      <path
+        :d="path"
+        class="linear-arc-foreground"
+        fill="none"
+        stroke="white"
+        :stroke-width="connection.type.width"
+        marker-end="url(#triangle-mask)"
+      />
+    </mask>
+    <g
+      v-if="highlight || localHighlight"
+      class="linear-arc-shine-container"
+      :mask="arcMask"
+    >
+      <rect
+        :x="shineRectangle.x"
+        :y="shineRectangle.y"
+        :width="shineRectangle.width"
+        :height="shineRectangle.height"
+        fill="url(#shine-y)"
+        :style="{'--shine-distance': `${shineDistance}px`}"
+        class="linear-arc-shine linear-arc-shine-y"
+      />
+    </g>
   </g>
-</g>
 </template>
 
 <script>
-import { mapState } from 'vuex';
-import Tooltip from '@/components/Tooltip.vue';
+import { useAppStore } from '@/stores/app';
+import { storeToRefs } from 'pinia';
 
 export default {
   name: 'LinearArc',
-  components: { Tooltip },
   props: {
     connection: Object,
     mute: Boolean,
@@ -64,13 +81,17 @@ export default {
       default: 120,
     },
   },
+  setup() {
+    const store = useAppStore();
+    const { showSpoilers } = storeToRefs(store);
+    return { showSpoilers };
+  },
   data() {
     return {
       localHighlight: false,
     };
   },
   computed: {
-    ...mapState(['showSpoilers']),
     styles() {
       return {
         stroke: this.connection.type.color,
@@ -169,6 +190,7 @@ export default {
   &-background {
     opacity: 0;
     transition: opacity 0.2s ease-in-out;
+    outline: none;
 
     &:hover {
       opacity: 0.25;

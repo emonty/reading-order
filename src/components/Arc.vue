@@ -1,53 +1,71 @@
 <template>
-<g :class="[
-  'arc',
-  {
-    'arc-nodes-inactive': !connection.nodesActive,
-    'arc-inactive': !connection.type.active,
-    'arc-muted': mute
-  }
-]">
-  <Tooltip
-    :text="showSpoilers
-      ? connection.description
-      : 'Spoilers ahead! Enable spoilers in the options to the right to see them!'
-    "
-    :options="{
-      autoHide: false,
-      offset: 5,
-      hideOnTargetClick: false,
-      toggle: 'click hover',
-    }"
-    :follow-mouse="true"
-    :disabled="mute"
+  <g
+    :class="[
+      'arc',
+      {
+        'arc-nodes-inactive': !connection.nodesActive,
+        'arc-inactive': !connection.type.active,
+        'arc-muted': mute
+      }
+    ]"
   >
     <path
-      :d="path" class="arc-background" fill="none" :style="bgStyles"
+      v-tooltip="{
+        content: showSpoilers
+          ? connection.description
+          : 'Spoilers ahead! Enable spoilers in the options to the right to see them!',
+        disabled: mute,
+        html: true,
+        triggers: ['hover', 'click'],
+        popperTriggers: ['hover'],
+        autoHide: true,
+      }"
+      :d="path"
+      class="arc-background"
+      fill="none"
+      :style="bgStyles"
       @mouseover="beginLocalHighlight"
       @mouseout="endLocalHighlight"
-    ></path>
-  </Tooltip>
-  <path :d="path" class="arc-foreground" fill="none" :style="styles"
-        :marker-end="`url(#triangle-${connection.type.id})`"></path>
-  <mask :id="`arc-path-${renderedStart}.${renderedEnd}`">
-    <path :d="path" class="arc-foreground" fill="none" stroke="white"
-          :stroke-width="connection.type.width" marker-end="url(#triangle-mask)"></path>
-  </mask>
-  <g class="arc-shine-container" :mask="`url(#arc-path-${renderedStart}.${renderedEnd})`"
-     v-if="highlight || localHighlight">
-    <rect :x="shineRectangle.x" :y="shineRectangle.y"
-          :width="shineRectangle.width" :height="shineRectangle.height"
-          :fill="`url(#shine-${shineAxis})`"
-          :style="{'--shine-distance': `${shineDistance}px`}"
-          :class="['arc-shine', `arc-shine-${shineAxis}`]"></rect>
+    />
+    <path
+      :d="path"
+      class="arc-foreground"
+      fill="none"
+      :style="styles"
+      :marker-end="`url(#triangle-${connection.type.id})`"
+    />
+    <mask :id="`arc-path-${renderedStart}.${renderedEnd}`">
+      <path
+        :d="path"
+        class="arc-foreground"
+        fill="none"
+        stroke="white"
+        :stroke-width="connection.type.width"
+        marker-end="url(#triangle-mask)"
+      />
+    </mask>
+    <g
+      v-if="highlight || localHighlight"
+      class="arc-shine-container"
+      :mask="`url(#arc-path-${renderedStart}.${renderedEnd})`"
+    >
+      <rect
+        :x="shineRectangle.x"
+        :y="shineRectangle.y"
+        :width="shineRectangle.width"
+        :height="shineRectangle.height"
+        :fill="`url(#shine-${shineAxis})`"
+        :style="{'--shine-distance': `${shineDistance}px`}"
+        :class="['arc-shine', `arc-shine-${shineAxis}`]"
+      />
+    </g>
   </g>
-</g>
 </template>
 
 <script>
 import { TweenLite } from 'gsap/gsap-core';
-import { mapState } from 'vuex';
-import Tooltip from '@/components/Tooltip.vue';
+import { useAppStore } from '@/stores/app';
+import { storeToRefs } from 'pinia';
 import { angleDifference, normalizeAngle } from '@/utils';
 
 function invertSeparation(separation) {
@@ -56,7 +74,6 @@ function invertSeparation(separation) {
 
 export default {
   name: 'Arc',
-  components: { Tooltip },
   props: {
     connection: Object,
     radius: {
@@ -65,6 +82,11 @@ export default {
     },
     mute: Boolean,
     highlight: Boolean,
+  },
+  setup() {
+    const store = useAppStore();
+    const { showSpoilers } = storeToRefs(store);
+    return { showSpoilers };
   },
   data() {
     return {
@@ -75,7 +97,6 @@ export default {
     };
   },
   computed: {
-    ...mapState(['showSpoilers']),
     styles() {
       return {
         stroke: this.connection.type.color,
@@ -211,6 +232,7 @@ export default {
   &-background {
     opacity: 0;
     transition: opacity 0.2s ease-in-out;
+    outline: none;
 
     &:hover {
       opacity: 0.25;

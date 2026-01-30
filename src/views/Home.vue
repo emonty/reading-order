@@ -1,40 +1,44 @@
 <template>
-<div
-  class="home"
-  @drop.capture.stop.prevent="loadLocalFile"
-  @dragenter.capture="captureDrop"
-  @dragover.capture="captureDrop"
->
-  <Legend
-    :connection-types="Object.values(connectionTypes)"
-    :layers="layers"
-    :appearances="appearances"
-    :sorted-books="sortedBooks"
-    @sort="sort"
+  <div
+    class="home"
+    @drop.capture.stop.prevent="loadLocalFile"
+    @dragenter.capture="captureDrop"
+    @dragover.capture="captureDrop"
   >
-  </Legend>
-  <CircleDiagram
-    v-if="viewMode === 'circular'"
-    :entries="entries"
-    :connection-types="connectionTypes"
-    :labels="entries === books ? labels : []"
-  />
-  <LinearDiagram
-    v-else-if="viewMode === 'linear'"
-    :entries="entries"
-    :connection-types="connectionTypes"
-    :labels="entries === books ? labels : []"
-  />
-  <InfoBox v-if="selectedEntry !== null" :entry="entries[selectedEntry]" />
-</div>
+    <SideLegend
+      :connection-types="Object.values(connectionTypes)"
+      :layers="layers"
+      :appearances="appearances"
+      :sorted-books="sortedBooks"
+      @sort="sort"
+    />
+    <CircleDiagram
+      v-if="viewMode === 'circular'"
+      :entries="entries"
+      :connection-types="connectionTypes"
+      :labels="entries === books ? labels : []"
+    />
+    <LinearDiagram
+      v-else-if="viewMode === 'linear'"
+      :entries="entries"
+      :connection-types="connectionTypes"
+      :labels="entries === books ? labels : []"
+    />
+    <InfoBox
+      v-if="selectedEntry !== null"
+      :entry="entries[selectedEntry]"
+    />
+  </div>
 </template>
 
 <script>
-import { mapState } from 'vuex';
+import { reactive } from 'vue';
+import { useAppStore } from '@/stores/app';
+import { storeToRefs } from 'pinia';
 import CircleDiagram from '@/components/CircleDiagram.vue';
 import LinearDiagram from '@/components/LinearDiagram.vue';
 import loader from '@/loader';
-import Legend from '@/components/Legend.vue';
+import SideLegend from '@/components/SideLegend.vue';
 import InfoBox from '@/components/InfoBox.vue';
 
 function buildDefaultSettings(query) {
@@ -68,12 +72,17 @@ function buildDefaultSettings(query) {
 }
 
 export default {
-  name: 'home',
+  name: 'Home',
   components: {
     InfoBox,
-    Legend,
+    SideLegend,
     CircleDiagram,
     LinearDiagram,
+  },
+  setup() {
+    const store = useAppStore();
+    const { selectedEntry } = storeToRefs(store);
+    return { selectedEntry };
   },
   data() {
     return {
@@ -87,7 +96,6 @@ export default {
     };
   },
   computed: {
-    ...mapState(['selectedEntry']),
     viewMode() {
       const mode = this.$route.query.view;
       return mode === 'linear' ? 'linear' : 'circular';
@@ -102,11 +110,55 @@ export default {
       const {
         books, sorted, connectionTypes, layers, appearances, labels,
       } = loader(data, buildDefaultSettings(this.$route.query));
+
+      // Make category objects reactive so changes propagate correctly in Vue 3
+      // This is needed because books hold direct references to category objects
+      // and Vue 3's reactivity doesn't automatically track shared object references
+      const reactiveCategories = {};
+
+      // First pass: create reactive categories and store them
+      const reactiveLayers = layers.map((layer) => {
+        const reactiveLayer = reactive({ ...layer, categories: [] });
+        reactiveLayer.categories = layer.categories.map((c) => {
+          const reactiveCategory = reactive({ ...c, layer: reactiveLayer });
+          reactiveCategories[c.id] = reactiveCategory;
+          return reactiveCategory;
+        });
+        return reactiveLayer;
+      });
+
+      // Update book category references and redefine the active getter
+      // The original getter uses a closure variable, so we need to replace it
+      // with one that uses this.categories (which will be reactive)
+      Object.values(books).forEach((book) => {
+        book.categories = book.categories.map(c => reactiveCategories[c.id]);
+        // Redefine the active getter to use this.categories instead of closure
+        Object.defineProperty(book, 'active', {
+          get() {
+            return this.categories.every(c => c.active);
+          },
+          configurable: true,
+        });
+      });
+
+      // Also update sorted books
+      sorted.forEach((s) => {
+        Object.values(s.books).forEach((book) => {
+          book.categories = book.categories.map(c => reactiveCategories[c.id]);
+          Object.defineProperty(book, 'active', {
+            get() {
+              return this.categories.every(c => c.active);
+            },
+            configurable: true,
+          });
+        });
+      });
+
       this.entries = books;
       this.books = books;
       this.sortedBooks = sorted;
       this.connectionTypes = connectionTypes;
-      this.layers = layers;
+      this.layers = reactiveLayers;
       this.appearances = appearances;
       this.labels = labels;
     },

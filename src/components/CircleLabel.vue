@@ -1,52 +1,54 @@
 <template>
-<g
-  :class="[
-    'circle-label',
-    {
-      'circle-label-top': label.depth === 1,
-      'circle-label-sub': label.depth > 1,
-      'circle-label-hover': hoverDepth !== null && hoverDepth <= label.depth
-    }
-  ]"
-  @mouseenter="$emit('begin-hover', label.depth)"
-  @mouseleave="$emit('end-hover')"
->
-  <defs>
-    <path
-      :id="`circle-label-${radius}-${renderedStart}-${renderedEnd}-line${i}`"
-      :d="textPath"
-      :key="i"
-      v-for="(textPath, i) in textPaths"
-    ></path>
-  </defs>
-  <path
-    :d="bgPath"
-    fill="transparent"
-  ></path>
-  <path
-    :d="path"
-    fill="none"
-    :stroke="label.color"
-    stroke-width="7"
-  ></path>
-  <text
-    :fill="label.color" text-anchor="middle"
-    :dominant-baseline="flip ? 'hanging' : 'baseline'"
+  <g
+    :class="[
+      'circle-label',
+      {
+        'circle-label-top': label.depth === 1,
+        'circle-label-sub': label.depth > 1,
+        'circle-label-hover': hoverDepth !== null && hoverDepth <= label.depth
+      }
+    ]"
+    @mouseenter="$emit('begin-hover', label.depth)"
+    @mouseleave="$emit('end-hover')"
   >
-    <textPath
-      :xlink:href="`#circle-label-${radius}-${renderedStart}-${renderedEnd}-line${i}`"
-      font-size="1.5em" startOffset="50%" :key="i"
-      v-for="(line, i) in lines"
+    <defs>
+      <path
+        v-for="(textPath, i) in textPaths"
+        :id="`circle-label-${radius}-${renderedStart}-${renderedEnd}-line${i}`"
+        :key="i"
+        :d="textPath"
+      />
+    </defs>
+    <path
+      :d="bgPath"
+      fill="transparent"
+    />
+    <path
+      :d="path"
+      fill="none"
+      :stroke="label.color"
+      stroke-width="7"
+    />
+    <text
+      :fill="label.color"
+      text-anchor="middle"
+      :dominant-baseline="flip ? 'hanging' : 'baseline'"
     >
-      {{ line }}
-    </textPath>
-  </text>
-</g>
+      <textPath
+        v-for="(line, i) in lines"
+        :key="i"
+        :xlink:href="`#circle-label-${radius}-${renderedStart}-${renderedEnd}-line${i}`"
+        font-size="1.5em"
+        startOffset="50%"
+      >
+        {{ line }}
+      </textPath>
+    </text>
+  </g>
 </template>
 
 <script>
 import { TweenLite } from 'gsap/gsap-core';
-import { mapState } from 'vuex';
 import { angleDifference, normalizeAngle } from '@/utils';
 
 function calculatePosition(angle, radius) {
@@ -72,7 +74,6 @@ export default {
     };
   },
   computed: {
-    ...mapState(['showSpoilers']),
     lines() {
       return this.label.text.split('<br>');
     },

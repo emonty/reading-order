@@ -1,27 +1,33 @@
 <template>
-<g :class="['circle-entry', {'circle-entry-inactive': !entry.active, 'circle-entry-muted': mute}]"
-   :transform="`translate(500, 500) rotate(${renderedAngle})`">
-  <text
-    dominant-baseline="central" :text-anchor="anchor" :style="styles"
-    :transform="`translate(0, -${radius + renderedPadding}) rotate(${sign * 90})`"
-    v-closable="{handler: handleOutsideClick, exclude: shouldNotClose}"
-    @mouseover="select" @mouseout="unselect" @click="toggle"
-    ref="text"
+  <g
+    :class="['circle-entry', {'circle-entry-inactive': !isActive, 'circle-entry-muted': mute}]"
+    :transform="`translate(500, 500) rotate(${renderedAngle})`"
   >
-    <slot></slot>
-  </text>
-  <AppearanceGroup
-    :appearances="entry.appearances.filter(a => a.ref.active)"
-    :rotation="-renderedAngle"
-    :transform="`translate(0, -${radius + renderedPadding + textWidth + 15})`"
-    v-if="textWidth >= 0"
-  ></AppearanceGroup>
-</g>
+    <text
+      ref="text"
+      v-closable="{handler: handleOutsideClick, exclude: shouldNotClose}"
+      dominant-baseline="central"
+      :text-anchor="anchor"
+      :style="styles"
+      :transform="`translate(0, -${radius + renderedPadding}) rotate(${sign * 90})`"
+      @mouseover="select"
+      @mouseout="unselect"
+      @click="toggle"
+    >
+      <slot />
+    </text>
+    <AppearanceGroup
+      v-if="textWidth >= 0"
+      :appearances="entry.appearances.filter(a => a.ref.active)"
+      :rotation="-renderedAngle"
+      :transform="`translate(0, -${radius + renderedPadding + textWidth + 15})`"
+    />
+  </g>
 </template>
 
 <script>
 import { TweenLite } from 'gsap/gsap-core';
-import { anyComponent, normalizeAngle } from '@/utils';
+import { isInInfoBox, normalizeAngle } from '@/utils';
 import AppearanceGroup from '@/components/AppearanceGroup.vue';
 
 export default {
@@ -45,6 +51,9 @@ export default {
     };
   },
   computed: {
+    isActive() {
+      return this.entry.categories.every(c => c.active);
+    },
     sign() {
       return this.renderedAngle > 180 ? 1 : -1;
     },
@@ -99,7 +108,7 @@ export default {
   },
   methods: {
     toggle() {
-      if (!this.entry.active) {
+      if (!this.isActive) {
         return;
       }
 
@@ -112,7 +121,7 @@ export default {
       }
     },
     select() {
-      if (!this.entry.active) {
+      if (!this.isActive) {
         return;
       }
 
@@ -133,7 +142,7 @@ export default {
     },
     shouldNotClose(target) {
       if (this.clicked) {
-        return anyComponent(target, node => (node.$props || {}).mute === false || node.$el.classList.contains('info-box'));
+        return isInInfoBox(target);
       }
 
       return false;

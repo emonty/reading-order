@@ -1,38 +1,58 @@
 <template>
-<div
-  :class="['info-box', { 'info-box--expanded': expanded }]"
-  v-closable="{ handler: () => { this.expanded = false } }"
->
-  <button class="info-box__toggle" @click="expanded = !expanded">
-    {{ expanded ? 'Hide Details' : 'Show Details' }}
-  </button>
-  <h2 class="info-box__title" v-html="this.entry.title2"/>
-  <span class="info-box__line">
-    <strong>Series: </strong>
-    <span v-html="entry.series || 'None'"/>
-  </span>
-  <span class="info-box__line">
-    <strong>World: </strong>
-    <span v-html="entry.world || 'None'"/>
-  </span>
-  <span class="info-box__line">
-    <strong>System: </strong>
-    <span v-html="entry.system || 'None'"/>
-  </span>
-  <span class="info-box__line">
-    <strong>Publication: </strong>
-    <span v-html="entry.publication || 'n/a'"/>
-  </span>
-  <template v-if="entry.chronology !== undefined">
-  <strong class="info-box__chronology-title">Chronology:</strong>
-  <p class="info-box__chronology" v-html="entry.chronology"/>
-  </template>
+  <div
+    v-closable="{ handler: () => { expanded = false } }"
+    :class="['info-box', { 'info-box--expanded': expanded }]"
+  >
+    <button
+      class="info-box__toggle"
+      @click="expanded = !expanded"
+    >
+      {{ expanded ? 'Hide Details' : 'Show Details' }}
+    </button>
+    <h2
+      class="info-box__title"
+      v-html="entry.title2"
+    />
+    <span class="info-box__line">
+      <strong>Series: </strong>
+      <span v-html="entry.series || 'None'" />
+    </span>
+    <span class="info-box__line">
+      <strong>World: </strong>
+      <span v-html="entry.world || 'None'" />
+    </span>
+    <span class="info-box__line">
+      <strong>System: </strong>
+      <span v-html="entry.system || 'None'" />
+    </span>
+    <span class="info-box__line">
+      <strong>Publication: </strong>
+      <span v-html="entry.publication || 'n/a'" />
+    </span>
+    <template v-if="entry.chronology !== undefined">
+      <strong class="info-box__chronology-title">Chronology:</strong>
+      <p
+        class="info-box__chronology"
+        v-html="entry.chronology"
+      />
+    </template>
 
-  <div v-if="entry.au !== undefined || entry.link !== undefined" class="info-box__notes">
-    <span v-if="entry.au" class="info-box__line" v-html="entry.au" />
-    <span v-if="entry.link" class="info-box__line" v-html="entry.link" />
+    <div
+      v-if="entry.au !== undefined || entry.link !== undefined"
+      class="info-box__notes"
+    >
+      <span
+        v-if="entry.au"
+        class="info-box__line"
+        v-html="entry.au"
+      />
+      <span
+        v-if="entry.link"
+        class="info-box__line"
+        v-html="entry.link"
+      />
+    </div>
   </div>
-</div>
 </template>
 
 <script>
@@ -85,7 +105,7 @@ export default {
     transition: all 0.2s ease-in-out;
 
     &:hover, &:active, &:focus {
-      background: lighten(#0f3562, 10%);
+      background: #184c8d;
     }
   }
 

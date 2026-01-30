@@ -1,18 +1,20 @@
 <template>
-<div
-  :class="['category-preview', {'category-preview-active': category.active}]"
-  :style="styles"
-  v-tooltip.left="{
-    content: category.details,
-    trigger: 'click hover',
-    autoHide: false,
-    hideOnTargetClick: false,
-    boundariesElement: 'viewport'
-  }"
->
-  <input type="checkbox" :id="`chk-category-${category.id}`" v-model="category.active">
-  <label :for="`chk-category-${category.id}`">{{category.description}}</label>
-</div>
+  <div
+    v-tooltip.left="{
+      content: category.details,
+      triggers: ['hover', 'click'],
+      html: true,
+    }"
+    :class="['category-preview', {'category-preview-active': category.active}]"
+    :style="styles"
+  >
+    <input
+      :id="`chk-category-${category.id}`"
+      v-model="category.active"
+      type="checkbox"
+    >
+    <label :for="`chk-category-${category.id}`">{{ category.description }}</label>
+  </div>
 </template>
 
 <script>

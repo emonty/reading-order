@@ -1,31 +1,41 @@
 <template>
-<g :class="['linear-entry', {'linear-entry-inactive': !entry.active, 'linear-entry-muted': mute}]"
-   :transform="`translate(${x}, ${y})`">
-  <rect
-    class="linear-entry-color-bar"
-    :x="0" :y="-15" width="4" height="30"
-    :fill="categoryColor"
-  ></rect>
-  <text
-    x="12" y="0"
-    dominant-baseline="central" text-anchor="start" :style="textStyles"
-    v-closable="{handler: handleOutsideClick, exclude: shouldNotClose}"
-    @mouseover="select" @mouseout="unselect" @click="toggle"
-    ref="text"
+  <g
+    :class="['linear-entry', {'linear-entry-inactive': !isActive, 'linear-entry-muted': mute}]"
+    :transform="`translate(${x}, ${y})`"
   >
-    {{ entry.title }}
-  </text>
-  <AppearanceGroup
-    :appearances="entry.appearances.filter(a => a.ref.active)"
-    :rotation="0"
-    :transform="`translate(${textWidth + 24}, 0)`"
-    v-if="textWidth >= 0"
-  ></AppearanceGroup>
-</g>
+    <rect
+      class="linear-entry-color-bar"
+      :x="0"
+      :y="-15"
+      width="4"
+      height="30"
+      :fill="categoryColor"
+    />
+    <text
+      ref="text"
+      v-closable="{handler: handleOutsideClick, exclude: shouldNotClose}"
+      x="12"
+      y="0"
+      dominant-baseline="central"
+      text-anchor="start"
+      :style="textStyles"
+      @mouseover="select"
+      @mouseout="unselect"
+      @click="toggle"
+    >
+      {{ entry.title }}
+    </text>
+    <AppearanceGroup
+      v-if="textWidth >= 0"
+      :appearances="entry.appearances.filter(a => a.ref.active)"
+      :rotation="0"
+      :transform="`translate(${textWidth + 24}, 0)`"
+    />
+  </g>
 </template>
 
 <script>
-import { anyComponent } from '@/utils';
+import { isInInfoBox } from '@/utils';
 import AppearanceGroup from '@/components/AppearanceGroup.vue';
 
 export default {
@@ -47,6 +57,9 @@ export default {
     };
   },
   computed: {
+    isActive() {
+      return this.entry.categories.every(c => c.active);
+    },
     categoryColor() {
       for (let i = 0; i < this.entry.categories.length; i += 1) {
         const category = this.entry.categories[i];
@@ -88,7 +101,7 @@ export default {
   },
   methods: {
     toggle() {
-      if (!this.entry.active) {
+      if (!this.isActive) {
         return;
       }
 
@@ -101,7 +114,7 @@ export default {
       }
     },
     select() {
-      if (!this.entry.active) {
+      if (!this.isActive) {
         return;
       }
 
@@ -122,7 +135,7 @@ export default {
     },
     shouldNotClose(target) {
       if (this.clicked) {
-        return anyComponent(target, node => (node.$props || {}).mute === false || node.$el.classList.contains('info-box'));
+        return isInInfoBox(target);
       }
 
       return false;

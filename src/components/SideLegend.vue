@@ -1,151 +1,205 @@
 <template>
-<div v-show="!hideCompletely" class="legend">
   <div
-    :class="['legend__intro', {'legend__intro--open': introToggled}]"
-    v-closable="{ handler: handleIntroOutsideClick }"
+    v-show="!hideCompletely"
+    class="legend"
   >
-    <div class="legend__intro-toggle" @click="introToggleHandler">
-      info
-    </div>
-
     <div
-      :class="[
-        'legend__intro-content',
-        { 'legend__intro-content-collapsed': introContentCollapsed }
-      ]"
+      v-closable="{ handler: handleIntroOutsideClick }"
+      :class="['legend__intro', {'legend__intro--open': introToggled}]"
     >
-      <h1>Cosmere Reading Guide</h1>
-      <p>This reading guide exists to (1) illustrate how the cosmere fits together, (2) provide
-        reading order guidance, (3) show connections between stories, and (4) provide awareness of
-        unpublished works.</p>
-      <span
-        class="legend__intro-content-toggle"
-        @click="introMoreInfoToggleHandler"
-        v-html="introContentCollapsed ? 'More details' : 'Less details'"
-      ></span>
-      <div class="legend__intro-content-more">
-        <p>(1) Books are grouped by series, world, and star system by default, and are listed in
-          the clockwise direction.</p>
-        <p>(2) There is no 'right way' to read the Cosmere. This guide presents and order similar
-          to publication order that also minimizes the amount of jumping between different series.
-          Simply read everything in each phase before moving to the next phase. Series should be
-          read in the order listed. Alternatively, the list can be sorted by publication order.</p>
-        <p>(3) Arrows illustrate connections between story. The 'target' includes some reference
-          to the first. Different arrow styles note the significance of any references (to the
-          story and to the greater cosmere), and can be taken as additional reading order advice.
-          Click books to see info and highlight related arrows. Click arrows to see details.</p>
-        <p>(4) Unpublished books may or may not be eventually published.</p>
-        <div class="legend-feedback">
-          <h2>Feedback</h2>
-          <ul class="feedback">
-            <li><a href="mailto:joshua@17thshard.com">Email</a></li>
-            <li><a href="https://github.com/17thshard/reading-order/issues/new">Github</a></li>
-            <li><a href="https://www.17thshard.com/forum/profile/18320-jofwu/">17th Shard</a></li>
-            <li><a href="https://www.reddit.com/message/compose/?to=jofwu">Reddit</a></li>
-          </ul>
+      <div
+        class="legend__intro-toggle"
+        @click="introToggleHandler"
+      >
+        info
+      </div>
+
+      <div
+        :class="[
+          'legend__intro-content',
+          { 'legend__intro-content-collapsed': introContentCollapsed }
+        ]"
+      >
+        <h1>Cosmere Reading Guide</h1>
+        <p>
+          This reading guide exists to (1) illustrate how the cosmere fits together, (2) provide
+          reading order guidance, (3) show connections between stories, and (4) provide awareness of
+          unpublished works.
+        </p>
+        <span
+          class="legend__intro-content-toggle"
+          @click="introMoreInfoToggleHandler"
+          v-html="introContentCollapsed ? 'More details' : 'Less details'"
+        />
+        <div class="legend__intro-content-more">
+          <p>
+            (1) Books are grouped by series, world, and star system by default, and are listed in
+            the clockwise direction.
+          </p>
+          <p>
+            (2) There is no 'right way' to read the Cosmere. This guide presents and order similar
+            to publication order that also minimizes the amount of jumping between different series.
+            Simply read everything in each phase before moving to the next phase. Series should be
+            read in the order listed. Alternatively, the list can be sorted by publication order.
+          </p>
+          <p>
+            (3) Arrows illustrate connections between story. The 'target' includes some reference
+            to the first. Different arrow styles note the significance of any references (to the
+            story and to the greater cosmere), and can be taken as additional reading order advice.
+            Click books to see info and highlight related arrows. Click arrows to see details.
+          </p>
+          <p>(4) Unpublished books may or may not be eventually published.</p>
+          <div class="legend-feedback">
+            <h2>Feedback</h2>
+            <ul class="feedback">
+              <li><a href="mailto:joshua@17thshard.com">Email</a></li>
+              <li><a href="https://github.com/17thshard/reading-order/issues/new">Github</a></li>
+              <li><a href="https://www.17thshard.com/forum/profile/18320-jofwu/">17th Shard</a></li>
+              <li><a href="https://www.reddit.com/message/compose/?to=jofwu">Reddit</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="legend__intro-close"
+        @click="introToggled = false"
+      >
+        x
+      </div>
+    </div>
+    <div
+      v-closable="{ handler: handleKeysOutsideClick }"
+      :class="['legend__keys', {'legend__keys--open': keysToggled}]"
+    >
+      <div
+        class="legend__keys-toggle"
+        @click="legendKeysToggleHandler"
+      >
+        legend
+      </div>
+
+      <div class="legend__keys-content">
+        <div class="legend-options">
+          <h2>Options</h2>
+          <span class="legend-options-item">
+            <label for="view-mode">View</label>
+            <select
+              id="view-mode"
+              @change="changeViewMode"
+            >
+              <option
+                value="circular"
+                :selected="selectedViewMode === 'circular'"
+              >Circular</option>
+              <option
+                value="linear"
+                :selected="selectedViewMode === 'linear'"
+              >Linear</option>
+            </select>
+          </span>
+          <span class="legend-options-item">
+            <label for="sort">Order by</label>
+            <select
+              id="sort"
+              @change="changeSort"
+            >
+              <option
+                :value="null"
+                :selected="selectedOrder === null"
+              >Series</option>
+              <option
+                v-for="sort in sortedBooks"
+                :key="sort.id"
+                :value="sort.id"
+                :selected="selectedOrder === sort"
+              >
+                {{ sort.description }}
+              </option>
+            </select>
+          </span>
+          <span class="legend-options-item">
+            <input
+              id="show-connection-explanations"
+              type="checkbox"
+              :checked="showSpoilers"
+              @input="store.toggleExplanations($event.target.checked)"
+            >
+            <label
+              for="show-connection-explanations"
+              title="Explain connection & appearance details"
+            >
+              Show spoilers
+            </label>
+          </span>
+          <span class="legend-options-item">
+            <input
+              id="highlight-series"
+              type="checkbox"
+              :checked="highlightSeries"
+              @input="store.toggleSeriesHighlight($event.target.checked)"
+            >
+            <label
+              for="highlight-series"
+              title="Activate arches around diagram"
+            >
+              Activate series and planets
+            </label>
+          </span>
+        </div>
+
+        <div class="legend-categories">
+          <h2>Categories</h2>
+          <Layer
+            v-for="layer in layers"
+            :key="layer.name"
+            :layer="layer"
+            @update-category-route="updateRoute('categories', flatCategories, $event)"
+          />
+        </div>
+        <div class="legend-connections">
+          <h2>Connections</h2>
+          <ConnectionPreview
+            v-for="type in connectionTypes"
+            :key="type.id"
+            :type="type"
+            @update-route="updateRoute('connections', connectionTypes, $event)"
+          />
+        </div>
+        <div class="legend-appearances">
+          <h2>Appearances</h2>
+          <AppearancePreview
+            v-for="appearance in appearances"
+            :key="appearance.id"
+            :appearance="appearance"
+            @update-route="updateRoute('appearances', appearances, $event)"
+          />
         </div>
       </div>
     </div>
-
-    <div class="legend__intro-close" @click="introToggled = false">
-      x
-    </div>
   </div>
-  <div
-    :class="['legend__keys', {'legend__keys--open': keysToggled}]"
-    v-closable="{ handler: handleKeysOutsideClick }"
-  >
-    <div class="legend__keys-toggle" @click="legendKeysToggleHandler">
-      legend
-    </div>
-
-    <div class="legend__keys-content">
-      <div class="legend-options">
-        <h2>Options</h2>
-        <span class="legend-options-item">
-          <label for="view-mode">View</label>
-          <select id="view-mode" @change="changeViewMode">
-            <option value="circular" :selected="selectedViewMode === 'circular'">Circular</option>
-            <option value="linear" :selected="selectedViewMode === 'linear'">Linear</option>
-          </select>
-        </span>
-        <span class="legend-options-item">
-          <label for="sort">Order by</label>
-          <select id="sort" @change="changeSort">
-            <option :value="null" :selected="selectedOrder === null">Series</option>
-            <option
-              :value="sort.id" :selected="selectedOrder === sort"
-              :key="sort.id"
-              v-for="sort in sortedBooks"
-            >
-              {{sort.description}}
-            </option>
-          </select>
-        </span>
-        <span class="legend-options-item">
-          <input id="show-connection-explanations" type="checkbox"
-                 :checked="showSpoilers"
-                 @input="$store.commit('toggleExplanations', $event.target.checked)">
-          <label for="show-connection-explanations" title="Explain connection & appearance details">
-            Show spoilers
-          </label>
-        </span>
-        <span class="legend-options-item">
-          <input id="highlight-series" type="checkbox"
-                 :checked="highlightSeries"
-                 @input="$store.commit('toggleSeriesHighlight', $event.target.checked)">
-          <label for="highlight-series" title="Activate arches around diagram">
-            Activate series and planets
-          </label>
-        </span>
-      </div>
-
-      <div class="legend-categories">
-        <h2>Categories</h2>
-        <Layer
-          :layer="layer"
-          :key="layer.name"
-          @update-category-route="updateRoute('categories', flatCategories, $event)"
-          v-for="layer in layers"
-        ></Layer>
-      </div>
-      <div class="legend-connections">
-        <h2>Connections</h2>
-        <ConnectionPreview
-          :type="type" :key="type.id"
-          @update-route="updateRoute('connections', connectionTypes, $event)"
-          v-for="type in connectionTypes"
-        >
-        </ConnectionPreview>
-      </div>
-      <div class="legend-appearances">
-        <h2>Appearances</h2>
-        <AppearancePreview
-          :appearance="appearance" :key="appearance.id"
-          @update-route="updateRoute('appearances', appearances, $event)"
-          v-for="appearance in appearances"
-        >
-        </AppearancePreview>
-      </div>
-    </div>
-  </div>
-</div>
 </template>
 
 <script>
-import { mapState } from 'vuex';
+import { useAppStore } from '@/stores/app';
+import { storeToRefs } from 'pinia';
 import ConnectionPreview from '@/components/ConnectionPreview.vue';
 import Layer from '@/components/Layer.vue';
 import AppearancePreview from '@/components/AppearancePreview.vue';
 
 export default {
-  name: 'Legend',
+  name: 'SideLegend',
   components: { AppearancePreview, Layer, ConnectionPreview },
   props: {
     connectionTypes: Array,
     layers: Array,
     appearances: Array,
     sortedBooks: Array,
+  },
+  setup() {
+    const store = useAppStore();
+    const { showSpoilers, highlightSeries } = storeToRefs(store);
+    return { store, showSpoilers, highlightSeries };
   },
   data() {
     return {
@@ -157,7 +211,6 @@ export default {
     };
   },
   computed: {
-    ...mapState(['showSpoilers', 'highlightSeries']),
     flatCategories() {
       return this.layers.reduce((acc, layer) => [...acc, ...layer.categories], []);
     },
@@ -192,7 +245,7 @@ export default {
   mounted() {
     document.addEventListener('keyup', this.toggleUi);
   },
-  destroyed() {
+  unmounted() {
     document.removeEventListener('keyup', this.toggleUi);
   },
   methods: {

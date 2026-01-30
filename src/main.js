@@ -1,23 +1,21 @@
-import Vue from 'vue';
-import VTooltip from 'v-tooltip';
+import { createApp } from 'vue';
+import { createPinia } from 'pinia';
+import FloatingVue from 'floating-vue';
+import 'floating-vue/dist/style.css';
 import App from './App.vue';
 import router from './router';
-import './registerServiceWorker';
-import CustomDirectives from './custom-directives';
-import store from './store';
+import { closableDirective } from './custom-directives';
 
-Vue.config.productionTip = false;
+const app = createApp(App);
 
-Vue.use(CustomDirectives);
-Vue.use(VTooltip);
+app.use(createPinia());
+app.use(router);
+app.use(FloatingVue);
+app.directive('closable', closableDirective);
 
 window.addEventListener('beforeinstallprompt', (e) => {
   // Prevent Chrome 67 and earlier from automatically showing the prompt
   e.preventDefault();
 });
 
-new Vue({
-  router,
-  store,
-  render: h => h(App),
-}).$mount('#app');
+app.mount('#app');

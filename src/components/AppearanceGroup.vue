@@ -1,11 +1,17 @@
 <template>
-<transition-group tag="g" name="fade-fast" class="appearance-group">
-  <Appearance
-    :appearance="appearance"
-    :rotation="rotation" :position="index * 25"
-    v-for="(appearance, index) in appearances" :key="`${appearance.type}-${appearance.id}`"
-  ></Appearance>
-</transition-group>
+  <transition-group
+    tag="g"
+    name="fade-fast"
+    class="appearance-group"
+  >
+    <Appearance
+      v-for="(appearance, index) in appearances"
+      :key="`${appearance.type}-${appearance.id}`"
+      :appearance="appearance"
+      :rotation="rotation"
+      :position="index * 25"
+    />
+  </transition-group>
 </template>
 
 <script>
